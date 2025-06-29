@@ -65,7 +65,6 @@ def ascii_hex_transmit(sentences, tx_port):
         if 'ser_tx' in locals(): # Check if ser_tx exists in variable local scope
             # Close the port to free it up in case it's used by another program   
             ser_tx.close()
-            print("UART transmission was successful!")
     
     
     

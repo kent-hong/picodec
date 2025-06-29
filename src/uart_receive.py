@@ -37,5 +37,4 @@ def ascii_hex_receive(rx_port, txt_path, sentence_length):
     finally:
         if 'ser_rx' in locals():
             ser_rx.close()
-            print("UART reception was successful!")
             
