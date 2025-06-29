@@ -38,11 +38,7 @@ def encode_jpeg(jpeg_path):
     # Output a message to confirm conversion was successful
     print("JPEG image was successfully converted into ASCII-Hex.")
     
-    # Instead of returning a list of all sentences, we need to transmit these sentences via UART
     return all_sentences
-    # Save ASCII-Hex data structure into a file
-    #with open(txt_path, "w") as file:
-    #    file.writelines(all_sentences)
 
 
 ## @brief This function transmits ASCII-Hex sentences over UART
@@ -70,7 +66,6 @@ def ascii_hex_transmit(sentences, tx_port):
             # Close the port to free it up in case it's used by another program   
             ser_tx.close()
             print("UART transmission was successful!")
-            return len(sentences)
     
     
     
