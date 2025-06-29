@@ -1,9 +1,10 @@
 import math
+import serial
+import time
 
 ## @brief This function encodes a JPEG image into ASCII Hex format for UART transmission
 #  @param jpeg_path JPEG image file path
-#  @param txt_path Path where you want to store the ASCII Hex data in a .txt file
-def encode_jpeg(jpeg_path, txt_path):
+def encode_jpeg(jpeg_path):
     # Open the jpeg file and read as binary data
     with open(jpeg_path, "rb") as file:
         binary_data = file.read()
@@ -34,10 +35,43 @@ def encode_jpeg(jpeg_path, txt_path):
     telemetry_sentence = f"@FACE{xxxx}1E{len(binary_data):06X}" + "00112233445566778899AABBCCDDEEFF" + "00A35B9F4D000670\r\n"
     all_sentences.append(telemetry_sentence)
 
-    # Save ASCII-Hex data structure into a file
-    with open(txt_path, "w") as file:
-        file.writelines(all_sentences)
-
     # Output a message to confirm conversion was successful
-    print("JPEG image was successfully converted into ASCII-Hex and stored in a .txt file.")
+    print("JPEG image was successfully converted into ASCII-Hex.")
+    
+    # Instead of returning a list of all sentences, we need to transmit these sentences via UART
+    return all_sentences
+    # Save ASCII-Hex data structure into a file
+    #with open(txt_path, "w") as file:
+    #    file.writelines(all_sentences)
+
+
+## @brief This function transmits ASCII-Hex sentences over UART
+#  @param sentences Returned list of ASCII-Hex sentences from encode_jpeg()
+#  @param tx_port Port name we wish to transmit the ASCII-Hex sentences from
+def ascii_hex_transmit(sentences, tx_port):
+    try:
+        # Set up UART Tx port
+        ser_tx = serial.Serial(port=tx_port, baudrate=115200)
+        
+        # Confirm UART Tx port was set up correctly
+        print(f"Transmitting {len(sentences)} ASCII-Hex sentences...")
+    
+        # Loop through each ASCII-Hex sentence
+        for i, sentence in enumerate(sentences):
+            ser_tx.write(sentence.encode()) # Send ASCII-Hex sentences as bytes
+            print(f"{i+1}/{len(sentences)} sentences transmitted")
+            
+            
+    except serial.SerialException as e:
+        print(f"UART Transmit Error: {e}")
+    
+    finally:
+        if 'ser_tx' in locals(): # Check if ser_tx exists in variable local scope
+            # Close the port to free it up in case it's used by another program   
+            ser_tx.close()
+            print("UART transmission was successful!")
+            return len(sentences)
+    
+    
+    
     
