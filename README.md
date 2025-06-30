@@ -30,8 +30,6 @@ This project is developed as part of [**SharkSat**](https://www.csulbaiaa.org/sh
 
 **`picodec`** is a Python-based tool designed to simulate image transmission using the SkyFox Labs **piCAM**. It encodes JPEG images into ASCII-Hex formatted UART packets for transmission, and decodes received ASCII-Hex data back into valid JPEG files. This utility helps validate image encoding and transmission pipelines in satellite communication systems.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -92,7 +90,6 @@ command> install PortName=COM10 PortName=COM11
 
 **Alternative:** Download the repo
 > Download the repo by clicking on the green code button on the repository landing page and clicking on `Download ZIP`. Just extract the repository to your desired location.
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
@@ -133,7 +130,6 @@ command> install PortName=COM10 PortName=COM11
 
 Congratulations! The program should now decode and reconstruct the JPEG image from the encoded ASCII-Hex sentences from your .txt file.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- LICENSE -->
@@ -141,7 +137,6 @@ Congratulations! The program should now decode and reconstruct the JPEG image fr
 
 Distributed under the Unlicense License. See `LICENSE.txt` for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
@@ -152,7 +147,6 @@ Kent Hong - [kent.n.hong@gmail.com]
 
 Project Link: [https://github.com/kent-hong/picodec](https://github.com/kent-hong/picodec)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
@@ -166,5 +160,4 @@ Project Link: [https://github.com/kent-hong/picodec](https://github.com/kent-hon
 * [Git](https://git-scm.com/)
 * [Python](https://www.python.org/)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
