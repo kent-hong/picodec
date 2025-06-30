@@ -34,7 +34,7 @@ This project is developed as part of [**SharkSat**](https://www.csulbaiaa.org/sh
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To begin using this tool, you’ll need to set up virtual COM ports to emulate UART transmission. A free option to achieve the desired behaviour is using **Null-modem emulator (com0com)** which is an open-source kernel-mode virtual serial port driver for Windows
+To begin using this tool, you’ll need to set up virtual COM ports to emulate UART transmission. A free option to achieve the desired behaviour is using **Null-modem emulator (com0com)** which is an open-source kernel-mode virtual serial port driver for Windows.
 
 ### Prerequisites
 * [**Git**](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
