@@ -55,7 +55,7 @@ To begin using this tool, you’ll need to set up virtual COM ports to emulate U
 
 2. Enable test signing.
 > The com0com.sys is a test-signed kernel-mode driver that will not load by
-  default. To enable test signing, enter command:
+  default. To enable test signing, in your cmd terminal as admin, enter the command:
 ```sh
 bcdedit.exe -set TESTSIGNING ON
 ```
